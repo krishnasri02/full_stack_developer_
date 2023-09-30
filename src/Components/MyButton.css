@@ -1,0 +1,261 @@
+button {
+    font-family: inherit;
+    font-weight: bold;
+    color: #ffffff9c;
+
+    letter-spacing: 2px;
+
+    padding: 9px 20px;
+    border: 1px solid var(--grey);
+    border-radius: 1000px;
+    background: transparent;
+    transition: .3s;
+    cursor: pointer;
+}
+
+button:hover,
+button:focus {
+    color: rgb(255, 255, 255);
+    background: hsla(var(--hue), 25%, 10%, .2);
+    border-color: currentColor;
+}
+
+button:active {
+    transform: translate(2px);
+}
+
+.modal-class {
+    background-color: rgb(249, 249, 249);
+}
+
+.design-container {
+    --tr: 90;
+    --op: .5;
+
+    width: 100%;
+    height: 100%;
+
+    background: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+}
+
+/* .design */
+.design {
+    display: block;
+
+    background: rgb(214, 214, 214);
+    position: absolute;
+
+    opacity: var(--op);
+    transition: .3s;
+}
+
+.design--1,
+.design--2,
+.design--3,
+.design--4 {
+    width: 2px;
+    height: 100%;
+}
+
+.design--1,
+.design--2 {
+    top: 0;
+    transform: translateY(calc((var(--tr) - (var(--tr) * 2)) * 1%))
+}
+
+.design--1 {
+    left: 20%;
+}
+
+.design--2 {
+    left: 80%;
+}
+
+.design--3,
+.design--4 {
+    bottom: 0;
+    transform: translateY(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+.design--3 {
+    left: 24%;
+}
+
+.design--4 {
+    left: 76%;
+}
+
+.design--5,
+.design--6,
+.design--7,
+.design--8 {
+    width: 100%;
+    height: 2px;
+}
+
+.design--5,
+.design--6 {
+    left: 0;
+    transform: translateX(calc((var(--tr) - (var(--tr) * 2)) * 1%));
+}
+
+.design--5 {
+    top: 41%;
+}
+
+.design--6 {
+    top: 59%;
+}
+
+.design--7,
+.design--8 {
+    right: 0;
+    transform: translateX(calc((var(--tr) + (var(--tr) - var(--tr))) * 1%))
+}
+
+.design--7 {
+    top: 44%;
+}
+
+.design--8 {
+    top: 56%;
+}
+
+/* states */
+button:hover+.design-container,
+button:active+.design-container,
+button:focus+.design-container {
+    --tr: 20;
+    --op: .7;
+}
+
+.abs-site-link {
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+    color: hsla(0, 0%, 100%, .6);
+    font-size: 16px;
+    font-family: 'Segoe UI', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.heading {
+    font-weight: 900;
+    font-size: 12px;
+    margin: 0%;
+}
+
+.ans {
+    font-size: 18px;
+}
+
+
+
+.gradient-cards {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 32px;
+    padding: 30px;
+
+    @media screen and (max-width: 991px) {
+        grid-template-columns: 1fr;
+    }
+}
+
+.container-title {
+    text-align: center;
+    padding: 0 !important;
+    margin-bottom: 40px;
+    font-size: 40px;
+    color: #fff;
+    font-weight: 600;
+    line-height: 60px;
+}
+
+.card {
+    max-width: 550px;
+    border: 0;
+    width: 100%;
+    margin-inline: auto;
+}
+
+.container-card {
+    position: relative;
+    border: 2px solid transparent;
+    background: linear-gradient(71deg, #080509, #1a171c, #080509);
+    background-clip: padding-box;
+    border-radius: 45px;
+    padding: 40px;
+
+    img {
+        margin-bottom: 32px;
+    }
+}
+
+.bg-green-box,
+.bg-white-box,
+.bg-yellow-box,
+.bg-blue-box {
+    position: relative;
+}
+
+.bg-green-box::after,
+.bg-white-box::after,
+.bg-yellow-box::after,
+.bg-blue-box::after {
+    position: absolute;
+    top: -1px;
+    bottom: -1px;
+    left: -1px;
+    right: -1px;
+    content: "";
+    z-index: -1;
+    border-radius: 45px;
+}
+
+.bg-green-box::after {
+    background: linear-gradient(71deg, #0d1212, #def2ea, #0d1212);
+}
+
+.bg-white-box::after {
+    background: linear-gradient(71deg, #121013, #b0afb0, #121013);
+}
+
+.bg-yellow-box::after {
+    background: linear-gradient(71deg, #110e0e, #1c1b1b, #110e0e);
+}
+
+.bg-blue-box::after {
+    background: linear-gradient(71deg, #0c0a0e, #5f6fad, #0c0a0e);
+}
+
+.card-title {
+    font-weight: 600;
+    color: white;
+    letter-spacing: -0.02em;
+    line-height: 40px;
+    font-style: normal;
+    font-size: 28px;
+    padding-bottom: 8px;
+}
+
+.card-description {
+    font-weight: 600;
+    line-height: 32px;
+    color: hsla(0, 0%, 100%, 0.5);
+    font-size: 16px;
+    max-width: 470px;
+    margin-left: 10px;
+}
+
+.category {
+    font-weight: 900;
+    line-height: 32px;
+    color: hsla(0, 0%, 100%, 0.5);
+    font-size: 16px;
+    max-width: 470px;
+}
